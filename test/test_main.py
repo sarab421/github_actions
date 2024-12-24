@@ -1,4 +1,7 @@
-from src.main import sum
+import sys 
+import os 
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src'))) 
+from main import sum
 
 def test_sum():
    assert sum(2, 3) == 5
