@@ -1,11 +1,8 @@
-.PHONY: venv dependencies
+.PHONY: venv install_deps
 
-create_venv:
+venv:
     pip3 install --upgrade pip
-	python3 -m venv venv
+    python3 -m venv venv
 
-deps: activate_venv:
-    source venv/bin/activate
-
-deps: install_deps:
-    pip3 install -r requirements.txt
+install_deps: venv
+    . venv/bin/activate && pip3 install -r requirements.txt
